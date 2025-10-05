@@ -71,7 +71,7 @@
             font-weight: 700;
         }
         
-        /* Artwork Grid: 5 blocks in a responsive grid */
+        /* Artwork Grid: Responsive grid for 5 items */
         .artwork-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -84,6 +84,7 @@
             padding: 1rem;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
         }
         
         .artwork-block:hover {
@@ -108,7 +109,7 @@
         
         .artwork-block .specs {
             font-style: italic;
-            color: #FF69B4;
+            color: slategray;
             margin: 0 0 1rem 0;
             font-size: 0.9rem;
         }
@@ -306,18 +307,18 @@
             <h2>Artwork</h2>
             <div class="artwork-grid">
                 <div class="artwork-block">
-                    <img src="BookandShores/1ART.JPG" alt="Artwork 1">
-                    <h3>I. Clay River</h3>
-                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <img src="BookandShores/1ART.JPG" alt="I. Slate Tide Artwork">
+                    <h3>I. Slate Tide</h3>
+                    <p class="specs">16 x 20 Matted, Acrylic, Wax, Raw Paper</p>
                     <details id="form1">
                         <summary>How to Buy This Details</summary>
                         <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
                         <div class="venmo-section">
                             <p>Pay via Venmo (@bookandshores):</p>
-                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Clay%20River%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Slate%20Tide%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
                         </div>
                         <form action="https://formspree.io/f/mqaylbqn" method="POST">
-                            <input type="hidden" name="artwork" value="I. Clay River">
+                            <input type="hidden" name="artwork" value="I. Slate Tide">
                             <label for="name1">Name:</label>
                             <input type="text" id="name1" name="name" required>
                             <label for="email1">Email:</label>
@@ -337,18 +338,18 @@
                     </details>
                 </div>
                 <div class="artwork-block">
-                    <img src="BookandShores/2ART.jpg" alt="Artwork 2">
-                    <h3>II. Sun Poppy</h3>
-                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <img src="BookandShores/2ART.jpg" alt="II. Clay River Artwork">
+                    <h3>II. Clay River</h3>
+                    <p class="specs">16 x 20 Matted, Acrylic, Wax, Raw Paper</p>
                     <details id="form2">
                         <summary>How to Buy This Details</summary>
                         <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
                         <div class="venmo-section">
                             <p>Pay via Venmo (@bookandshores):</p>
-                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Sun%20Poppy%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Clay%20River%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
                         </div>
                         <form action="https://formspree.io/f/mqaylbqn" method="POST">
-                            <input type="hidden" name="artwork" value="II. Sun Poppy">
+                            <input type="hidden" name="artwork" value="II. Clay River">
                             <label for="name2">Name:</label>
                             <input type="text" id="name2" name="name" required>
                             <label for="email2">Email:</label>
@@ -368,18 +369,18 @@
                     </details>
                 </div>
                 <div class="artwork-block">
-                    <img src="BookandShores/3ART.JPG" alt="Artwork 3">
-                    <h3>III. Slate Tide</h3>
-                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <img src="BookandShores/3ART.JPG" alt="III. SunPoppy Artwork">
+                    <h3>III. SunPoppy</h3>
+                    <p class="specs">16 x 20 Matted, Acrylic, Wax, Raw Paper</p>
                     <details id="form3">
                         <summary>How to Buy This Details</summary>
                         <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
                         <div class="venmo-section">
                             <p>Pay via Venmo (@bookandshores):</p>
-                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Slate%20Tide%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=SunPoppy%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
                         </div>
                         <form action="https://formspree.io/f/mqaylbqn" method="POST">
-                            <input type="hidden" name="artwork" value="III. Slate Tide">
+                            <input type="hidden" name="artwork" value="III. SunPoppy">
                             <label for="name3">Name:</label>
                             <input type="text" id="name3" name="name" required>
                             <label for="email3">Email:</label>
@@ -399,18 +400,18 @@
                     </details>
                 </div>
                 <div class="artwork-block">
-                    <img src="BookandShores/4ART.JPG" alt="Artwork 4">
-                    <h3>IV. Rose Tide</h3>
-                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <img src="BookandShores/4ART.JPG" alt="IV. Fire Meets Canyon Artwork">
+                    <h3>IV. Fire Meets Canyon</h3>
+                    <p class="specs">16 x 20 Matted, Acrylic, Wax, Raw Paper</p>
                     <details id="form4">
                         <summary>How to Buy This Details</summary>
                         <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
                         <div class="venmo-section">
                             <p>Pay via Venmo (@bookandshores):</p>
-                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Rose%20Tide%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Fire%20Meets%20Canyon%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
                         </div>
                         <form action="https://formspree.io/f/mqaylbqn" method="POST">
-                            <input type="hidden" name="artwork" value="IV. Rose Tide">
+                            <input type="hidden" name="artwork" value="IV. Fire Meets Canyon">
                             <label for="name4">Name:</label>
                             <input type="text" id="name4" name="name" required>
                             <label for="email4">Email:</label>
@@ -430,18 +431,18 @@
                     </details>
                 </div>
                 <div class="artwork-block">
-                    <img src="BookandShores/5ART.JPG" alt="Artwork 5">
-                    <h3>V. Fire Meets Canyon</h3>
-                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <img src="BookandShores/5ART.JPG" alt="V. Rose Tide Artwork">
+                    <h3>V. Rose Tide</h3>
+                    <p class="specs">16 x 20 Matted, Acrylic, Wax, Raw Paper</p>
                     <details id="form5">
                         <summary>How to Buy This Details</summary>
                         <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
                         <div class="venmo-section">
                             <p>Pay via Venmo (@bookandshores):</p>
-                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Fire%20Meets%20Canyon%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Rose%20Tide%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
                         </div>
                         <form action="https://formspree.io/f/mqaylbqn" method="POST">
-                            <input type="hidden" name="artwork" value="V. Fire Meets Canyon">
+                            <input type="hidden" name="artwork" value="V. Rose Tide">
                             <label for="name5">Name:</label>
                             <input type="text" id="name5" name="name" required>
                             <label for="email5">Email:</label>
@@ -467,12 +468,12 @@
             <h2>Book and Shore Reads</h2>
             <ul>
                 <li>
-                    <img src="BookandShores/BOOK1.jpg" alt="The Waves cover">
-                    <div><strong>The Waves</strong> by Virginia Woolf – A symphonic swell of inner soliloquies.</div>
+                    <img src="BookandShores/image_kertesz.jpg" alt="Fatelessness cover">
+                    <div><strong>Fatelessness</strong> by Imre Kertész – A haunting exploration of survival and memory.</div>
                 </li>
                 <li>
-                    <img src="BookandShores/BOOK2.jpg" alt="Moby-Dick cover">
-                    <div><strong>Moby-Dick</strong> by Herman Melville – Leviathans and lexicons adrift.</div>
+                    <img src="BookandShores/image_gelman.jpg" alt="Unthinkable Tenderness cover">
+                    <div><strong>Unthinkable Tenderness</strong> by Juan Gelman – Verses that bridge exile and the human heart.</div>
                 </li>
             </ul>
             <!-- To update: Edit the <li> elements directly in this file before committing to Git. -->
@@ -480,7 +481,6 @@
         
         <section id="music" class="music-section">
             <h2>Original Sounds</h2>
-            <p style="text-align: center; margin-bottom: 1rem;">Uploaded as inspiration hits.</p>
             <audio controls>
                 <source src="BookandShores/MUSICBYBOOKANDSHORES_1.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
