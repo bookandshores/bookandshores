@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book and Shores</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fcc028;
+            color: #000000;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 2px solid #000000;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.7;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        /* Artwork Grid: 5 blocks in a responsive grid */
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .artwork-block {
+            border: 1px solid #000000;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .artwork-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .artwork-block img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border: 1px solid #000000;
+            margin-bottom: 1rem;
+        }
+        
+        .artwork-block h3 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            font-weight: 600;
+        }
+        
+        .artwork-block .specs {
+            font-style: italic;
+            color: #FF69B4;
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Formspree Form Styling */
+        details {
+            border: 1px solid #FF69B4;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+            list-style: none;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .price-note {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .venmo-section {
+            margin: 1rem 0;
+            text-align: center;
+            padding: 0.5rem;
+            border: 1px solid #000000;
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        .venmo-section p {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .venmo-btn {
+            display: inline-block;
+            background: #00A699; /* Venmo green */
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            margin-top: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .venmo-btn:hover {
+            opacity: 0.8;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        input, select, textarea {
+            padding: 0.5rem;
+            border: 1px solid #000000;
+            background: #fcc028;
+            color: #000000;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        button[type="submit"] {
+            background: #000000;
+            color: #fcc028;
+            border: 1px solid #000000;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        button[type="submit"]:hover {
+            opacity: 0.8;
+        }
+        
+        /* Weekly Booklist */
+        .booklist {
+            border: 1px solid #000000;
+            padding: 2rem;
+        }
+        
+        .booklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .booklist li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #000000;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .booklist li:hover {
+            background-color: #000000;
+            color: #fcc028;
+        }
+        
+        .booklist li img {
+            width: 80px;
+            height: auto;
+            flex-shrink: 0;
+            border: 1px solid #000000;
+        }
+        
+        .booklist li strong {
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        .booklist li:hover strong {
+            color: #fcc028;
+        }
+        
+        /* Music Upload Area */
+        .music-section {
+            border: 1px solid #000000;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        audio {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 1rem;
+        }
+        
+        /* Instagram Feed Section */
+        .insta-section {
+            border: 1px solid #000000;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .insta-link {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .insta-embed {
+            margin-top: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 2px solid #000000;
+            margin-top: 4rem;
+        }
+        
+        a {
+            color: #000000;
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2rem; }
+            .artwork-grid { grid-template-columns: 1fr; }
+            .booklist li { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book and Shores</h1>
+        <nav>
+            <a href="#artwork">Artwork</a>
+            <a href="#booklist">Weekly Reads</a>
+            <a href="#music">Original Sounds</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="artwork">
+            <h2>Artwork</h2>
+            <div class="artwork-grid">
+                <div class="artwork-block">
+                    <img src="BookandShores/1ART.JPG" alt="Artwork 1">
+                    <h3>I. Clay River</h3>
+                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <details id="form1">
+                        <summary>How to Buy This Details</summary>
+                        <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
+                        <div class="venmo-section">
+                            <p>Pay via Venmo (@bookandshores):</p>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Clay%20River%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                        </div>
+                        <form action="https://formspree.io/f/mqaylbqn" method="POST">
+                            <input type="hidden" name="artwork" value="I. Clay River">
+                            <label for="name1">Name:</label>
+                            <input type="text" id="name1" name="name" required>
+                            <label for="email1">Email:</label>
+                            <input type="email" id="email1" name="email" required>
+                            <label for="quantity1">Quantity:</label>
+                            <select id="quantity1" name="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3+">3+</option>
+                            </select>
+                            <label for="address1">Shipping Address:</label>
+                            <textarea id="address1" name="address" rows="3" required placeholder="Full shipping address (street, city, state, ZIP)"></textarea>
+                            <label for="message1">Message:</label>
+                            <textarea id="message1" name="message" rows="4" placeholder="Details or questions..."></textarea>
+                            <button type="submit">Send Inquiry</button>
+                        </form>
+                    </details>
+                </div>
+                <div class="artwork-block">
+                    <img src="BookandShores/2ART.jpg" alt="Artwork 2">
+                    <h3>II. Sun Poppy</h3>
+                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <details id="form2">
+                        <summary>How to Buy This Details</summary>
+                        <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
+                        <div class="venmo-section">
+                            <p>Pay via Venmo (@bookandshores):</p>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Sun%20Poppy%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                        </div>
+                        <form action="https://formspree.io/f/mqaylbqn" method="POST">
+                            <input type="hidden" name="artwork" value="II. Sun Poppy">
+                            <label for="name2">Name:</label>
+                            <input type="text" id="name2" name="name" required>
+                            <label for="email2">Email:</label>
+                            <input type="email" id="email2" name="email" required>
+                            <label for="quantity2">Quantity:</label>
+                            <select id="quantity2" name="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3+">3+</option>
+                            </select>
+                            <label for="address2">Shipping Address:</label>
+                            <textarea id="address2" name="address" rows="3" required placeholder="Full shipping address (street, city, state, ZIP)"></textarea>
+                            <label for="message2">Message:</label>
+                            <textarea id="message2" name="message" rows="4" placeholder="Details or questions..."></textarea>
+                            <button type="submit">Send Inquiry</button>
+                        </form>
+                    </details>
+                </div>
+                <div class="artwork-block">
+                    <img src="BookandShores/3ART.JPG" alt="Artwork 3">
+                    <h3>III. Slate Tide</h3>
+                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <details id="form3">
+                        <summary>How to Buy This Details</summary>
+                        <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
+                        <div class="venmo-section">
+                            <p>Pay via Venmo (@bookandshores):</p>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Slate%20Tide%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                        </div>
+                        <form action="https://formspree.io/f/mqaylbqn" method="POST">
+                            <input type="hidden" name="artwork" value="III. Slate Tide">
+                            <label for="name3">Name:</label>
+                            <input type="text" id="name3" name="name" required>
+                            <label for="email3">Email:</label>
+                            <input type="email" id="email3" name="email" required>
+                            <label for="quantity3">Quantity:</label>
+                            <select id="quantity3" name="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3+">3+</option>
+                            </select>
+                            <label for="address3">Shipping Address:</label>
+                            <textarea id="address3" name="address" rows="3" required placeholder="Full shipping address (street, city, state, ZIP)"></textarea>
+                            <label for="message3">Message:</label>
+                            <textarea id="message3" name="message" rows="4" placeholder="Details or questions..."></textarea>
+                            <button type="submit">Send Inquiry</button>
+                        </form>
+                    </details>
+                </div>
+                <div class="artwork-block">
+                    <img src="BookandShores/4ART.JPG" alt="Artwork 4">
+                    <h3>IV. Rose Tide</h3>
+                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <details id="form4">
+                        <summary>How to Buy This Details</summary>
+                        <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
+                        <div class="venmo-section">
+                            <p>Pay via Venmo (@bookandshores):</p>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Rose%20Tide%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                        </div>
+                        <form action="https://formspree.io/f/mqaylbqn" method="POST">
+                            <input type="hidden" name="artwork" value="IV. Rose Tide">
+                            <label for="name4">Name:</label>
+                            <input type="text" id="name4" name="name" required>
+                            <label for="email4">Email:</label>
+                            <input type="email" id="email4" name="email" required>
+                            <label for="quantity4">Quantity:</label>
+                            <select id="quantity4" name="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3+">3+</option>
+                            </select>
+                            <label for="address4">Shipping Address:</label>
+                            <textarea id="address4" name="address" rows="3" required placeholder="Full shipping address (street, city, state, ZIP)"></textarea>
+                            <label for="message4">Message:</label>
+                            <textarea id="message4" name="message" rows="4" placeholder="Details or questions..."></textarea>
+                            <button type="submit">Send Inquiry</button>
+                        </form>
+                    </details>
+                </div>
+                <div class="artwork-block">
+                    <img src="BookandShores/5ART.JPG" alt="Artwork 5">
+                    <h3>V. Fire Meets Canyon</h3>
+                    <p class="specs">16 x20 Matted, Acrylic, Wax , Raw Paper</p>
+                    <details id="form5">
+                        <summary>How to Buy This Details</summary>
+                        <p class="price-note">Price: $175 (includes $15 USPS Shipping). Turnaround: 3-5 days.</p>
+                        <div class="venmo-section">
+                            <p>Pay via Venmo (@bookandshores):</p>
+                            <a href="https://venmo.com/pay?recipients=bookandshores&amount=175&note=Fire%20Meets%20Canyon%20Print" target="_blank" class="venmo-btn">SUBMIT $175 (includes the $15 for shipping)</a>
+                        </div>
+                        <form action="https://formspree.io/f/mqaylbqn" method="POST">
+                            <input type="hidden" name="artwork" value="V. Fire Meets Canyon">
+                            <label for="name5">Name:</label>
+                            <input type="text" id="name5" name="name" required>
+                            <label for="email5">Email:</label>
+                            <input type="email" id="email5" name="email" required>
+                            <label for="quantity5">Quantity:</label>
+                            <select id="quantity5" name="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3+">3+</option>
+                            </select>
+                            <label for="address5">Shipping Address:</label>
+                            <textarea id="address5" name="address" rows="3" required placeholder="Full shipping address (street, city, state, ZIP)"></textarea>
+                            <label for="message5">Message:</label>
+                            <textarea id="message5" name="message" rows="4" placeholder="Details or questions..."></textarea>
+                            <button type="submit">Send Inquiry</button>
+                        </form>
+                    </details>
+                </div>
+            </div>
+        </section>
+        
+        <section id="booklist" class="booklist">
+            <h2>Book and Shore Reads</h2>
+            <ul>
+                <li>
+                    <img src="BookandShores/BOOK1.jpg" alt="The Waves cover">
+                    <div><strong>The Waves</strong> by Virginia Woolf – A symphonic swell of inner soliloquies.</div>
+                </li>
+                <li>
+                    <img src="BookandShores/BOOK2.jpg" alt="Moby-Dick cover">
+                    <div><strong>Moby-Dick</strong> by Herman Melville – Leviathans and lexicons adrift.</div>
+                </li>
+            </ul>
+            <!-- To update: Edit the <li> elements directly in this file before committing to Git. -->
+        </section>
+        
+        <section id="music" class="music-section">
+            <h2>Original Sounds</h2>
+            <p style="text-align: center; margin-bottom: 1rem;">Uploaded as inspiration hits.</p>
+            <audio controls>
+                <source src="BookandShores/MUSICBYBOOKANDSHORES_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+        
+        <section id="insta" class="insta-section">
+            <h2>@westwaveslaguna</h2>
+            <a href="https://www.instagram.com/westwaveslaguna/" target="_blank" class="insta-link">View Full Feed on Instagram</a>
+            <div class="insta-embed">
+                <!-- Instagram profile embed widget; replace with actual embed code if available, or use a static representation -->
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/westwaveslaguna/" data-instgrm-version="14"></blockquote>
+                <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <h2>THANKS FOR VISITING</h2>
+        <p>Art Inquiries: <a href="https://www.instagram.com/westwaveslaguna/" target="_blank">@westwaveslaguna</a> Email: <a href="mailto:bookandshores@gmail.com">bookandshores@gmail.com</a></p>
+        <p>Send postcards or letters: 1968 S. Coastal Hwy #4182 92651 (I will write you back- always)</p>
+        <p>&copy;2025 BookandShores</p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
